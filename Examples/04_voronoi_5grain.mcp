@@ -1,0 +1,620 @@
+# sample
+NXcell
+	1
+NYcell
+	1
+NZcell
+	1
+LXcell
+	1.000000e+02 # nm
+LYcell
+	1.000000e+02 # nm
+LZcell
+	1.000000e+02 # nm
+
+
+## Montecarlo
+Totaltime # total number of the time steps
+	100
+dtime_phonon # time step for phonon
+	1.000000e-12
+dtime_electron # time step for electron
+	1.000000e-15
+hotT # Temperature on the hoter boundary
+	301.000000
+coldT # 
+	299.000000
+temp # Temperature
+	300.000000
+ElectronEffectiveFactor # electron effective factor
+	 10.000000
+PoissonSolver # solve poisson equation
+	true
+BoundaryLeft # boundary condition for left  boundary
+	fixtemp
+BoundaryRight # boundary condition for right boundary
+	fixtemp
+
+
+## Raytracing
+# parameters
+CellSpecularity
+	1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+FluctuationSpecularity
+	0.000000
+temp # Temperature
+	300.000000
+
+Np # number of incident phonons
+	500
+Nangle # number of incident angles
+	11
+ScopeY # Y region of phonon emission
+	1.000000
+ScopeZ # 
+	1.000000
+Trace # number of phonon for output trace
+	1000
+
+
+# materials
+Nm # number of materials
+	1
+material contents
+	Si
+		100.000000
+
+# truns functions
+Nt
+	1 1
+materials
+	Si Si mode Value Specular
+		0.500000 0.000000
+
+# grains
+Shape # shape of grains
+	voronoi
+Ng Ngx Ngy Ngz # number of grains
+	5 5 1 1
+## grain No.1
+  generator
+	 +4.746451 +73.608188 +32.823423
+  length
+	+25.000000 +25.000000 +25.000000
+  material
+	Si
+# facets of grain No.1
+  Nf # number of facets
+	7
+#  facet No.1
+  Nv # number of vertex
+		4
+	vertex 1
+		 +0.000000  +0.000000  +0.000000
+	vertex 2
+		 +0.000000 +100.000000  +0.000000
+	vertex 3
+		+61.308466 +100.000000  +0.000000
+	vertex 4
+		+63.866827  +0.000000  +0.000000
+  material_to = Boundary
+  grain_to = 0
+#  facet No.2
+  Nv # number of vertex
+		4
+	vertex 1
+		 +0.000000 +100.000000  +0.000000
+	vertex 2
+		 +0.000000 +100.000000 +66.853171
+	vertex 3
+		+29.949037 +100.000000 +65.495772
+	vertex 4
+		+61.308466 +100.000000  +0.000000
+  material_to = Boundary
+  grain_to = 0
+#  facet No.3
+  Nv # number of vertex
+		4
+	vertex 1
+		 +0.000000  +0.000000 +38.826688
+	vertex 2
+		 +0.000000  +0.000000  +0.000000
+	vertex 3
+		+63.866827  +0.000000  +0.000000
+	vertex 4
+		+59.000498  +0.000000 +10.163577
+  material_to = Boundary
+  grain_to = 0
+#  facet No.4
+  Nv # number of vertex
+		5
+	vertex 1
+		 +0.000000  +0.000000  +0.000000
+	vertex 2
+		 +0.000000  +0.000000 +38.826688
+	vertex 3
+		 +0.000000 +16.538722 +51.187910
+	vertex 4
+		 +0.000000 +100.000000 +66.853171
+	vertex 5
+		 +0.000000 +100.000000  +0.000000
+  material_to = Boundary
+  grain_to = 0
+#  facet No.5
+  Nv # number of vertex
+		4
+	vertex 1
+		 +0.000000 +16.538722 +51.187910
+	vertex 2
+		 +0.000000  +0.000000 +38.826688
+	vertex 3
+		+59.000498  +0.000000 +10.163577
+	vertex 4
+		+36.416408 +45.197864 +54.916562
+  material_to = Si
+  grain_to = 3
+#  facet No.6
+  Nv # number of vertex
+		5
+	vertex 1
+		+61.308466 +100.000000  +0.000000
+	vertex 2
+		+29.949037 +100.000000 +65.495772
+	vertex 3
+		+36.416408 +45.197864 +54.916562
+	vertex 4
+		+59.000498  +0.000000 +10.163577
+	vertex 5
+		+63.866827  +0.000000  +0.000000
+  material_to = Si
+  grain_to = 4
+#  facet No.7
+  Nv # number of vertex
+		4
+	vertex 1
+		 +0.000000 +100.000000 +66.853171
+	vertex 2
+		 +0.000000 +16.538722 +51.187910
+	vertex 3
+		+36.416408 +45.197864 +54.916562
+	vertex 4
+		+29.949037 +100.000000 +65.495772
+  material_to = Si
+  grain_to = 5
+## grain No.2
+  generator
+	+63.263857 +75.641049 +99.103739
+  length
+	+25.000000 +25.000000 +25.000000
+  material
+	Si
+# facets of grain No.2
+  Nf # number of facets
+	6
+#  facet No.1
+  Nv # number of vertex
+		4
+	vertex 1
+		+27.268293 +100.000000 +100.000000
+	vertex 2
+		+100.000000 +100.000000 +100.000000
+	vertex 3
+		+100.000000 +100.000000 +90.454239
+	vertex 4
+		+32.480481 +100.000000 +72.551754
+  material_to = Boundary
+  grain_to = 0
+#  facet No.2
+  Nv # number of vertex
+		4
+	vertex 1
+		+36.850607 +56.997720 +100.000000
+	vertex 2
+		+100.000000 +23.859189 +100.000000
+	vertex 3
+		+100.000000 +100.000000 +100.000000
+	vertex 4
+		+27.268293 +100.000000 +100.000000
+  material_to = Boundary
+  grain_to = 0
+#  facet No.3
+  Nv # number of vertex
+		4
+	vertex 1
+		+100.000000 +100.000000 +90.454239
+	vertex 2
+		+100.000000 +100.000000 +100.000000
+	vertex 3
+		+100.000000 +23.859189 +100.000000
+	vertex 4
+		+100.000000 +24.006848 +91.137952
+  material_to = Boundary
+  grain_to = 0
+#  facet No.4
+  Nv # number of vertex
+		4
+	vertex 1
+		+42.018460 +54.694228 +75.488322
+	vertex 2
+		+100.000000 +24.006848 +91.137952
+	vertex 3
+		+100.000000 +23.859189 +100.000000
+	vertex 4
+		+36.850607 +56.997720 +100.000000
+  material_to = Si
+  grain_to = 3
+#  facet No.5
+  Nv # number of vertex
+		4
+	vertex 1
+		+100.000000 +100.000000 +90.454239
+	vertex 2
+		+100.000000 +24.006848 +91.137952
+	vertex 3
+		+42.018460 +54.694228 +75.488322
+	vertex 4
+		+32.480481 +100.000000 +72.551754
+  material_to = Si
+  grain_to = 4
+#  facet No.6
+  Nv # number of vertex
+		4
+	vertex 1
+		+27.268293 +100.000000 +100.000000
+	vertex 2
+		+32.480481 +100.000000 +72.551754
+	vertex 3
+		+42.018460 +54.694228 +75.488322
+	vertex 4
+		+36.850607 +56.997720 +100.000000
+  material_to = Si
+  grain_to = 5
+## grain No.3
+  generator
+	+36.533867 +24.703889 +98.255029
+  length
+	+25.000000 +25.000000 +25.000000
+  material
+	Si
+# facets of grain No.3
+  Nf # number of facets
+	8
+#  facet No.1
+  Nv # number of vertex
+		5
+	vertex 1
+		 +0.000000 +28.956769 +100.000000
+	vertex 2
+		 +0.000000  +0.000000 +100.000000
+	vertex 3
+		+100.000000  +0.000000 +100.000000
+	vertex 4
+		+100.000000 +23.859189 +100.000000
+	vertex 5
+		+36.850607 +56.997720 +100.000000
+  material_to = Boundary
+  grain_to = 0
+#  facet No.2
+  Nv # number of vertex
+		5
+	vertex 1
+		 +0.000000  +0.000000 +100.000000
+	vertex 2
+		 +0.000000  +0.000000 +38.826688
+	vertex 3
+		+59.000498  +0.000000 +10.163577
+	vertex 4
+		+100.000000  +0.000000 +54.419193
+	vertex 5
+		+100.000000  +0.000000 +100.000000
+  material_to = Boundary
+  grain_to = 0
+#  facet No.3
+  Nv # number of vertex
+		4
+	vertex 1
+		+100.000000 +24.006848 +91.137952
+	vertex 2
+		+100.000000 +23.859189 +100.000000
+	vertex 3
+		+100.000000  +0.000000 +100.000000
+	vertex 4
+		+100.000000  +0.000000 +54.419193
+  material_to = Boundary
+  grain_to = 0
+#  facet No.4
+  Nv # number of vertex
+		4
+	vertex 1
+		 +0.000000  +0.000000 +38.826688
+	vertex 2
+		 +0.000000  +0.000000 +100.000000
+	vertex 3
+		 +0.000000 +28.956769 +100.000000
+	vertex 4
+		 +0.000000 +16.538722 +51.187910
+  material_to = Boundary
+  grain_to = 0
+#  facet No.5
+  Nv # number of vertex
+		4
+	vertex 1
+		+59.000498  +0.000000 +10.163577
+	vertex 2
+		 +0.000000  +0.000000 +38.826688
+	vertex 3
+		 +0.000000 +16.538722 +51.187910
+	vertex 4
+		+36.416408 +45.197864 +54.916562
+  material_to = Si
+  grain_to = 1
+#  facet No.6
+  Nv # number of vertex
+		4
+	vertex 1
+		+36.850607 +56.997720 +100.000000
+	vertex 2
+		+100.000000 +23.859189 +100.000000
+	vertex 3
+		+100.000000 +24.006848 +91.137952
+	vertex 4
+		+42.018460 +54.694228 +75.488322
+  material_to = Si
+  grain_to = 2
+#  facet No.7
+  Nv # number of vertex
+		5
+	vertex 1
+		+59.000498  +0.000000 +10.163577
+	vertex 2
+		+36.416408 +45.197864 +54.916562
+	vertex 3
+		+42.018460 +54.694228 +75.488322
+	vertex 4
+		+100.000000 +24.006848 +91.137952
+	vertex 5
+		+100.000000  +0.000000 +54.419193
+  material_to = Si
+  grain_to = 4
+#  facet No.8
+  Nv # number of vertex
+		5
+	vertex 1
+		 +0.000000 +28.956769 +100.000000
+	vertex 2
+		+36.850607 +56.997720 +100.000000
+	vertex 3
+		+42.018460 +54.694228 +75.488322
+	vertex 4
+		+36.416408 +45.197864 +54.916562
+	vertex 5
+		 +0.000000 +16.538722 +51.187910
+  material_to = Si
+  grain_to = 5
+## grain No.4
+  generator
+	+72.266040 +75.335583 +65.151857
+  length
+	+25.000000 +25.000000 +25.000000
+  material
+	Si
+# facets of grain No.4
+  Nf # number of facets
+	8
+#  facet No.1
+  Nv # number of vertex
+		4
+	vertex 1
+		+61.308466 +100.000000  +0.000000
+	vertex 2
+		+100.000000 +100.000000  +0.000000
+	vertex 3
+		+100.000000  +0.000000  +0.000000
+	vertex 4
+		+63.866827  +0.000000  +0.000000
+  material_to = Boundary
+  grain_to = 0
+#  facet No.2
+  Nv # number of vertex
+		5
+	vertex 1
+		+100.000000 +100.000000 +90.454239
+	vertex 2
+		+100.000000 +100.000000  +0.000000
+	vertex 3
+		+61.308466 +100.000000  +0.000000
+	vertex 4
+		+29.949037 +100.000000 +65.495772
+	vertex 5
+		+32.480481 +100.000000 +72.551754
+  material_to = Boundary
+  grain_to = 0
+#  facet No.3
+  Nv # number of vertex
+		4
+	vertex 1
+		+63.866827  +0.000000  +0.000000
+	vertex 2
+		+100.000000  +0.000000  +0.000000
+	vertex 3
+		+100.000000  +0.000000 +54.419193
+	vertex 4
+		+59.000498  +0.000000 +10.163577
+  material_to = Boundary
+  grain_to = 0
+#  facet No.4
+  Nv # number of vertex
+		5
+	vertex 1
+		+100.000000  +0.000000  +0.000000
+	vertex 2
+		+100.000000 +100.000000  +0.000000
+	vertex 3
+		+100.000000 +100.000000 +90.454239
+	vertex 4
+		+100.000000 +24.006848 +91.137952
+	vertex 5
+		+100.000000  +0.000000 +54.419193
+  material_to = Boundary
+  grain_to = 0
+#  facet No.5
+  Nv # number of vertex
+		5
+	vertex 1
+		+61.308466 +100.000000  +0.000000
+	vertex 2
+		+63.866827  +0.000000  +0.000000
+	vertex 3
+		+59.000498  +0.000000 +10.163577
+	vertex 4
+		+36.416408 +45.197864 +54.916562
+	vertex 5
+		+29.949037 +100.000000 +65.495772
+  material_to = Si
+  grain_to = 1
+#  facet No.6
+  Nv # number of vertex
+		4
+	vertex 1
+		+100.000000 +100.000000 +90.454239
+	vertex 2
+		+32.480481 +100.000000 +72.551754
+	vertex 3
+		+42.018460 +54.694228 +75.488322
+	vertex 4
+		+100.000000 +24.006848 +91.137952
+  material_to = Si
+  grain_to = 2
+#  facet No.7
+  Nv # number of vertex
+		5
+	vertex 1
+		+100.000000  +0.000000 +54.419193
+	vertex 2
+		+100.000000 +24.006848 +91.137952
+	vertex 3
+		+42.018460 +54.694228 +75.488322
+	vertex 4
+		+36.416408 +45.197864 +54.916562
+	vertex 5
+		+59.000498  +0.000000 +10.163577
+  material_to = Si
+  grain_to = 3
+#  facet No.8
+  Nv # number of vertex
+		4
+	vertex 1
+		+29.949037 +100.000000 +65.495772
+	vertex 2
+		+36.416408 +45.197864 +54.916562
+	vertex 3
+		+42.018460 +54.694228 +75.488322
+	vertex 4
+		+32.480481 +100.000000 +72.551754
+  material_to = Si
+  grain_to = 5
+## grain No.5
+  generator
+	 +7.268588 +63.163472 +88.470713
+  length
+	+25.000000 +25.000000 +25.000000
+  material
+	Si
+# facets of grain No.5
+  Nf # number of facets
+	7
+#  facet No.1
+  Nv # number of vertex
+		5
+	vertex 1
+		 +0.000000 +100.000000 +66.853171
+	vertex 2
+		 +0.000000 +100.000000 +100.000000
+	vertex 3
+		+27.268293 +100.000000 +100.000000
+	vertex 4
+		+32.480481 +100.000000 +72.551754
+	vertex 5
+		+29.949037 +100.000000 +65.495772
+  material_to = Boundary
+  grain_to = 0
+#  facet No.2
+  Nv # number of vertex
+		4
+	vertex 1
+		 +0.000000 +100.000000 +100.000000
+	vertex 2
+		 +0.000000 +28.956769 +100.000000
+	vertex 3
+		+36.850607 +56.997720 +100.000000
+	vertex 4
+		+27.268293 +100.000000 +100.000000
+  material_to = Boundary
+  grain_to = 0
+#  facet No.3
+  Nv # number of vertex
+		4
+	vertex 1
+		 +0.000000 +28.956769 +100.000000
+	vertex 2
+		 +0.000000 +100.000000 +100.000000
+	vertex 3
+		 +0.000000 +100.000000 +66.853171
+	vertex 4
+		 +0.000000 +16.538722 +51.187910
+  material_to = Boundary
+  grain_to = 0
+#  facet No.4
+  Nv # number of vertex
+		4
+	vertex 1
+		 +0.000000 +100.000000 +66.853171
+	vertex 2
+		+29.949037 +100.000000 +65.495772
+	vertex 3
+		+36.416408 +45.197864 +54.916562
+	vertex 4
+		 +0.000000 +16.538722 +51.187910
+  material_to = Si
+  grain_to = 1
+#  facet No.5
+  Nv # number of vertex
+		4
+	vertex 1
+		+27.268293 +100.000000 +100.000000
+	vertex 2
+		+36.850607 +56.997720 +100.000000
+	vertex 3
+		+42.018460 +54.694228 +75.488322
+	vertex 4
+		+32.480481 +100.000000 +72.551754
+  material_to = Si
+  grain_to = 2
+#  facet No.6
+  Nv # number of vertex
+		5
+	vertex 1
+		 +0.000000 +28.956769 +100.000000
+	vertex 2
+		 +0.000000 +16.538722 +51.187910
+	vertex 3
+		+36.416408 +45.197864 +54.916562
+	vertex 4
+		+42.018460 +54.694228 +75.488322
+	vertex 5
+		+36.850607 +56.997720 +100.000000
+  material_to = Si
+  grain_to = 3
+#  facet No.7
+  Nv # number of vertex
+		4
+	vertex 1
+		+32.480481 +100.000000 +72.551754
+	vertex 2
+		+42.018460 +54.694228 +75.488322
+	vertex 3
+		+36.416408 +45.197864 +54.916562
+	vertex 4
+		+29.949037 +100.000000 +65.495772
+  material_to = Si
+  grain_to = 4

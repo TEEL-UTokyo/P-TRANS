@@ -1,0 +1,272 @@
+# sample
+NXcell
+	1
+NYcell
+	1
+NZcell
+	1
+LXcell
+	2.000000e+02 # nm
+LYcell
+	1.000000e+02 # nm
+LZcell
+	1.000000e+02 # nm
+
+
+## Montecarlo
+Totaltime # total number of the time steps
+	100
+dtime_phonon # time step for phonon
+	1.000000e-12
+dtime_electron # time step for electron
+	1.000000e-15
+hotT # Temperature on the hoter boundary
+	301.000000
+coldT # 
+	299.000000
+temp # Temperature
+	300.000000
+ElectronEffectiveFactor # electron effective factor
+	 10.000000
+PoissonSolver # solve poisson equation
+	false
+BoundaryLeft # boundary condition for left  boundary
+	fixtemp
+BoundaryRight # boundary condition for right boundary
+	fixtemp
+
+
+## Raytracing
+# parameters
+CellSpecularity
+	1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+FluctuationSpecularity
+	0.000000
+temp # Temperature
+	300.000000
+
+Np # number of incident phonons
+	1000
+Nangle # number of incident angles
+	11
+ScopeY # Y region of phonon emission
+	1.000000
+ScopeZ # 
+	1.000000
+Trace # number of phonon for output trace
+	20
+
+
+# materials
+Nm # number of materials
+	1
+material contents
+	Si
+		100.000000
+
+# truns functions
+Nt
+	1 1
+materials
+	Si Si mode Value Specular
+		0.500000 1.000000
+
+# grains
+Shape # shape of grains
+	bricks
+Ng Ngx Ngy Ngz # number of grains
+	4 2 2 1
+## grain No.1
+  generator
+	+50.000000 +25.000000 +50.000000
+  sphere
+	+40.000000 +40.000000 +40.000000
+  material
+	Si
+  material_to = Internal
+  grain_to = 0
+## grain No.2
+  generator
+	+50.000000 +75.000000 +50.000000
+  sphere
+	+50.000000 +50.000000 +50.000000
+  material
+	Si
+  material_to = Internal
+  grain_to = 0
+## grain No.3
+  generator
+	+150.000000 +25.000000 +50.000000
+  box
+	+50.000000 +25.000000 +50.000000
+  material
+	Si
+# facets of grain No.3
+  Nf # number of facets
+	6
+#  facet No.1
+  Nv # number of vertex
+		4
+	vertex 1
+		+125.000000 +12.500000 +25.000000
+	vertex 2
+		+125.000000 +37.500000 +25.000000
+	vertex 3
+		+175.000000 +37.500000 +25.000000
+	vertex 4
+		+175.000000 +12.500000 +25.000000
+  material_to = Internal
+  grain_to = 0
+#  facet No.2
+  Nv # number of vertex
+		4
+	vertex 1
+		+125.000000 +37.500000 +25.000000
+	vertex 2
+		+125.000000 +37.500000 +75.000000
+	vertex 3
+		+175.000000 +37.500000 +75.000000
+	vertex 4
+		+175.000000 +37.500000 +25.000000
+  material_to = Internal
+  grain_to = 0
+#  facet No.3
+  Nv # number of vertex
+		4
+	vertex 1
+		+125.000000 +37.500000 +75.000000
+	vertex 2
+		+125.000000 +12.500000 +75.000000
+	vertex 3
+		+175.000000 +12.500000 +75.000000
+	vertex 4
+		+175.000000 +37.500000 +75.000000
+  material_to = Internal
+  grain_to = 0
+#  facet No.4
+  Nv # number of vertex
+		4
+	vertex 1
+		+125.000000 +12.500000 +75.000000
+	vertex 2
+		+125.000000 +12.500000 +25.000000
+	vertex 3
+		+175.000000 +12.500000 +25.000000
+	vertex 4
+		+175.000000 +12.500000 +75.000000
+  material_to = Internal
+  grain_to = 0
+#  facet No.5
+  Nv # number of vertex
+		4
+	vertex 1
+		+175.000000 +12.500000 +25.000000
+	vertex 2
+		+175.000000 +37.500000 +25.000000
+	vertex 3
+		+175.000000 +37.500000 +75.000000
+	vertex 4
+		+175.000000 +12.500000 +75.000000
+  material_to = Internal
+  grain_to = 0
+#  facet No.6
+  Nv # number of vertex
+		4
+	vertex 1
+		+125.000000 +12.500000 +25.000000
+	vertex 2
+		+125.000000 +12.500000 +75.000000
+	vertex 3
+		+125.000000 +37.500000 +75.000000
+	vertex 4
+		+125.000000 +37.500000 +25.000000
+  material_to = Internal
+  grain_to = 0
+## grain No.4
+  generator
+	+150.000000 +75.000000 +50.000000
+  box
+	+50.000000 +25.000000 +50.000000
+  material
+	Si
+# facets of grain No.4
+  Nf # number of facets
+	6
+#  facet No.1
+  Nv # number of vertex
+		4
+	vertex 1
+		+125.000000 +62.500000 +25.000000
+	vertex 2
+		+125.000000 +87.500000 +25.000000
+	vertex 3
+		+175.000000 +87.500000 +25.000000
+	vertex 4
+		+175.000000 +62.500000 +25.000000
+  material_to = Internal
+  grain_to = 0
+#  facet No.2
+  Nv # number of vertex
+		4
+	vertex 1
+		+125.000000 +87.500000 +25.000000
+	vertex 2
+		+125.000000 +87.500000 +75.000000
+	vertex 3
+		+175.000000 +87.500000 +75.000000
+	vertex 4
+		+175.000000 +87.500000 +25.000000
+  material_to = Internal
+  grain_to = 0
+#  facet No.3
+  Nv # number of vertex
+		4
+	vertex 1
+		+125.000000 +87.500000 +75.000000
+	vertex 2
+		+125.000000 +62.500000 +75.000000
+	vertex 3
+		+175.000000 +62.500000 +75.000000
+	vertex 4
+		+175.000000 +87.500000 +75.000000
+  material_to = Internal
+  grain_to = 0
+#  facet No.4
+  Nv # number of vertex
+		4
+	vertex 1
+		+125.000000 +62.500000 +75.000000
+	vertex 2
+		+125.000000 +62.500000 +25.000000
+	vertex 3
+		+175.000000 +62.500000 +25.000000
+	vertex 4
+		+175.000000 +62.500000 +75.000000
+  material_to = Internal
+  grain_to = 0
+#  facet No.5
+  Nv # number of vertex
+		4
+	vertex 1
+		+175.000000 +62.500000 +25.000000
+	vertex 2
+		+175.000000 +87.500000 +25.000000
+	vertex 3
+		+175.000000 +87.500000 +75.000000
+	vertex 4
+		+175.000000 +62.500000 +75.000000
+  material_to = Internal
+  grain_to = 0
+#  facet No.6
+  Nv # number of vertex
+		4
+	vertex 1
+		+125.000000 +62.500000 +25.000000
+	vertex 2
+		+125.000000 +62.500000 +75.000000
+	vertex 3
+		+125.000000 +87.500000 +75.000000
+	vertex 4
+		+125.000000 +87.500000 +25.000000
+  material_to = Internal
+  grain_to = 0

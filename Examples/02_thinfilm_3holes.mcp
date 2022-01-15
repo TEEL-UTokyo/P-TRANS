@@ -1,0 +1,105 @@
+# sample
+NXcell
+	1
+NYcell
+	1
+NZcell
+	1
+LXcell
+	2.000000e+02 # nm
+LYcell
+	1.000000e+02 # nm
+LZcell
+	1.000000e+02 # nm
+
+
+## Montecarlo
+Totaltime # total number of the time steps
+	100
+dtime_phonon # time step for phonon
+	1.000000e-12
+dtime_electron # time step for electron
+	1.000000e-15
+hotT # Temperature on the hoter boundary
+	301.000000
+coldT # 
+	299.000000
+temp # Temperature
+	300.000000
+ElectronEffectiveFactor # electron effective factor
+	 10.000000
+PoissonSolver # solve poisson equation
+	true
+BoundaryLeft # boundary condition for left  boundary
+	fixtemp
+BoundaryRight # boundary condition for right boundary
+	fixtemp
+
+
+## Raytracing
+# parameters
+CellSpecularity
+	1.000000 1.000000 0.000000 1.000000 1.000000 1.000000
+FluctuationSpecularity
+	0.000000
+temp # Temperature
+	300.000000
+
+Np # number of incident phonons
+	1000
+Nangle # number of incident angles
+	11
+ScopeY # Y region of phonon emission
+	1.000000
+ScopeZ # 
+	1.000000
+Trace # number of phonon for output trace
+	20
+
+
+# materials
+Nm # number of materials
+	1
+material contents
+	Si
+		100.000000
+
+# truns functions
+Nt
+	1 1
+materials
+	Si Si mode Value Specular
+		1.000000 1.000000
+
+# grains
+Shape # shape of grains
+	bricks
+Ng Ngx Ngy Ngz # number of grains
+	3 3 1 1
+## grain No.1
+  generator
+	+33.333333 +50.000000 +50.000000
+  cylinder
+	+33.333333 +33.333333 +100.000000
+  material
+	Si
+  material_to = Internal
+  grain_to = 0
+## grain No.2
+  generator
+	+100.000000 +50.000000 +50.000000
+  cylinder
+	+33.333333 +33.333333 +100.000000
+  material
+	Si
+  material_to = Internal
+  grain_to = 0
+## grain No.3
+  generator
+	+166.666667 +50.000000 +50.000000
+  cylinder
+	+33.333333 +33.333333 +100.000000
+  material
+	Si
+  material_to = Internal
+  grain_to = 0
