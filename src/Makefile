@@ -1,18 +1,18 @@
 include Makefile.inc
 
-all: RTMCphon
+all: ptrans
 
 LFLAGS =
 LIBS =
 
-main.o: main.f90 RTMCphon.o
+main.o: main.f90 ptrans.o
 	$(FC) -c $(FFLAGS) main.f90
 
-RTMCphon.o: RTMCphon.f90
+ptrans.o: RTMCphon.f90
 	$(FC) -c $(FFLAGS) $< -o $@
 
-RTMCphon: main.o RTMCphon.o
-	$(FC) main.o RTMCphon.o $(LFLAGS) $(LIBS) -o $@
+ptrans: main.o ptrans.o
+	$(FC) main.o ptrans.o $(LFLAGS) $(LIBS) -o $@
 
 clean:
-	rm -f RTMCphon *.o *.mod
+	rm -f ptrans *.o *.mod
